@@ -1,9 +1,7 @@
 @import './variables';
 @import './mixins';
 @import './placeholders';
-
-
-
+@import 'https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap';
 
 
 
@@ -12,9 +10,12 @@ body {
     max-width: 480px;
 }
 
+h1, h2, h3, p{
+    font: $main-font-stack;
+}
+
 header img{
     width: 197px;
-    margin: 14px 90px;
 }
 
 
