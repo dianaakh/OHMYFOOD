@@ -1,0 +1,11 @@
+body {
+  max-width: 480px;
+  font: Roboto, sans-serif;
+}
+
+header img {
+  display: flex;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=style.css.map */
