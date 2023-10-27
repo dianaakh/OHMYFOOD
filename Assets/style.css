@@ -1,11 +1,10 @@
 body {
   max-width: 480px;
-  font: Roboto, sans-serif;
 }
 
 header img {
-  display: flex;
-  justify-content: center;
+  width: 197px;
+  margin: 14px 90px;
 }
 
 /*# sourceMappingURL=style.css.map */
