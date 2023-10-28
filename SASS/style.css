@@ -1,5 +1,16 @@
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 body {
+  font-family: Roboto, sans-serif;
   max-width: 480px;
+}
+
+.logo {
+  font-size: 30px;
 }
 
 header img {

@@ -1,18 +1,21 @@
 @import './variables';
 @import './mixins';
 @import './placeholders';
-@import 'https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap';
-
-
 
 
 body {
+    font-family: $main-font-stack;
     max-width: 480px;
 }
 
-h1, h2, h3, p{
-    font: $main-font-stack;
+.logo{
+    @extend %flex-center;
+    font-size: 30px;
 }
+
+//h1, h2, h3, p{
+//    font: $main-font-stack;
+//}
 
 header img{
     width: 197px;
