@@ -17,4 +17,8 @@ header img {
   width: 197px;
 }
 
+.location {
+  display: flex;
+}
+
 /*# sourceMappingURL=style.css.map */
