@@ -57,15 +57,19 @@ body {
 }
 
 .button{
-    @extend %flex-center;
+  @extend %flex-center;
     button{
     @include btn;
     color: white;
     font-size: 16px;
     font-weight: 500;
     padding: 13px 19px;
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25)
-    }
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25)}
+    transition: all 1000ms;
+        button:hover {
+        opacity: 0.9;
+        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
+        }
 }
 
 .fonctionnement{

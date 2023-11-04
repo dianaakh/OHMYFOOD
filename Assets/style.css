@@ -77,13 +77,18 @@ body a {
 
 .button button {
   border-radius: 25px;
-  background: linear-gradient(181deg, #FF79DA -11.44%, #9356DC 123.93%);
+  background: linear-gradient(201deg, #9356DC -5.2%, #FF79DA 110.74%);
   border: unset;
+  height: 50px;
   color: white;
   font-size: 16px;
   font-weight: 500;
   padding: 13px 19px;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+}
+.button button:hover {
+  opacity: 0.9;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
 }
 
 .fonctionnement {
