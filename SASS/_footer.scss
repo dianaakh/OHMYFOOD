@@ -1,0 +1,28 @@
+footer {
+    background: $dark-bg-txt;
+    color: white;
+    padding: 22px 25px;
+
+    a,
+    p {
+        font-size: 16px;
+        margin: unset;
+        padding-bottom: 7px;
+    }
+}
+
+.footer__logo h3 {
+    font-family: $font-stack-title;
+    font-size: 18px;
+    margin: 0px 0px 16px 0px;
+}
+
+.footer__content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    i {
+        font-size: 13px;
+    }
+}
