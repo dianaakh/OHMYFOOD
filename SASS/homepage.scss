@@ -10,32 +10,7 @@ body {
         margin: unset;
     }
     a {
-        color: inherit;
-        text-decoration: none;
-    }
-}
-
-// HEADER //
-
-.logo{
-    @extend %flex-center;
-    font-size: 30px;
-    padding: 14px 89px 13px 89px;
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
-    img {
-        width: 197px;
-    }
-}
-
-.location{
-    @extend %flex-center;
-    box-shadow: inset 1px 4px 4px 0px rgba(195, 188, 188, 0.65);
-    display: flex;
-    gap: 17px;
-    background: $secondary-bg-color;
-    width: 100%;  
-    p {
-        color: $dark-bg-txt;
+        @extend %link-nostyle;
     }
 }
 
@@ -60,16 +35,12 @@ body {
   @extend %flex-center;
     button{
     @include btn;
-    color: white;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 13px 19px;
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25)}
-    transition: all 1000ms;
-        button:hover {
+    @include font-style(16px,500);
+        &:hover {
         opacity: 0.9;
         box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
         }
+    }    
 }
 
 .fonctionnement{
@@ -142,36 +113,7 @@ body {
         margin: 0px 0px 5px 0px;
     }
     p{
-        font-size: 17px;
-        font-weight: 300;
+        @include font-style(17px,300);
         margin: unset;
-    }
-}
-
-// FOOTER //
-
-footer{
-    background: $dark-bg-txt;
-    color: white;
-    padding: 22px 25px;
-    a, p{
-        font-size: 16px;
-        margin: unset;
-        padding-bottom: 7px;
-    }
-}
-
-.footer__logo h3{
-    font-family: $font-stack-title;
-    font-size: 18px;
-    margin: 0px 0px 16px 0px;
-}
-
-.footer__content{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    i{
-        font-size: 13px;
     }
 }
