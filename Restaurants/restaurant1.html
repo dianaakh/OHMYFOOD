@@ -10,18 +10,23 @@
 </head>
 
 <body>
-    <header>
-        <div class="logo"> <img src="../Assets/images/logo/ohmyfood.png" alt="Logo OhMyFood"> </div>
+    <header class="header">
+        <a class="header__icon" href="../homepage.html"> <i class="fa-solid fa-arrow-left"></i> </a>
+        <div> <img class="header__logo" src="../Assets/images/logo/ohmyfood.png" alt="Logo OhMyFood"> </div>
     </header>
     <main>
-        <div class="main__img"> <img src="../Assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
-                alt="Photo d'une femme tenant une assiette dressée"> </div>
+       <!-- <div class="main__img"> --> 
+            <img class="main__img" src="../Assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
+                alt="Photo d'une femme tenant une assiette dressée"> 
+           <!-- </div>--> 
         <section class="menu">
             <div>
-                <h1> La palette du goût </h1>
+                <h1 class="menu__main-title"> La palette du goût </h1>
             </div>
             <article class="menu__parts">
-                <h2 class="menu__title"> ENTRÉES </h2>
+                <div class="menu__parts-title">
+                    <h2> ENTRÉES </h2>
+                </div>
                 <a href="#">
                     <div class="card">
                         <div class="card__content">
@@ -60,7 +65,9 @@
                 </a>
             </article>
             <article class="menu__parts">
-                <h2 class="menu__title"> PLATS </h2>
+                <div class="menu__parts-title">
+                    <h2> PLATS </h2>
+                </div>
                 <a href="#">
                     <div class="card">
                         <div class="card__content">
@@ -100,7 +107,9 @@
             </article>
 
             <article class="menu__parts">
-                <h2 class="menu__title"> DESSERTS </h2>
+                <div class="menu__parts-title">
+                    <h2> DESSERTS </h2>
+                </div>
                 <a href="#">
                     <div class="card">
                         <div class="card__content">

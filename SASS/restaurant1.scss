@@ -10,25 +10,8 @@ body {
         @extend %link-nostyle;
     }
 
-    img {
+    .main__img {
         width: 100%
-    }
-
-    h1 {
-        font: 28px $font-stack-title;
-        margin: unset;
-    }
-}
-
-// HEADER //
-
-.logo {
-    @extend %flex-center;
-    font-size: 30px;
-    padding: 14px 89px 13px 89px;
-
-    img {
-        width: 197px;
     }
 }
 
@@ -40,16 +23,27 @@ body {
     border-radius: 40px 40px 0px 0px;
     padding: 32px 15px 40px 15px;
     gap: 40px;
+    position: relative;
+    margin-top: -55px;
 
-    &__title {
-        @include font-style (16px, 300);
+    &__main-title {
+        font: 28px $font-stack-title;
+        margin: unset;
+    }
+}
+
+.menu__parts {
+    @extend %flex-column;
+    gap: 12px;
+
+    &-title {
         border-bottom: 3px solid $tertiary-color;
         width: 40px;
-    }
 
-    &__parts {
-        @extend %flex-column;
-        gap: 12px;
+        h2 {
+            @include font-style (16px, 300);
+            margin: 0px 0px 5px;
+        }
     }
 }
 
@@ -62,9 +56,9 @@ body {
     box-shadow: 0px 4.01149px 15.0431px 0px rgba(0, 0, 0, 0.10);
 
     //&__content {
-        //overflow:hidden;
-        //text-overflow: ellipsis;
-        //white-space: nowrap;
+    //overflow:hidden;
+    //text-overflow: ellipsis;
+    //white-space: nowrap;
     //}
 
     &__title {
@@ -106,42 +100,10 @@ body {
         @include btn;
         @include font-style(16px, 500);
         width: 186px;
-        transition: all 1000ms;
 
         button:hover {
             opacity: 0.9;
             box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
         }
-    }
-}
-
-// FOOTER //
-
-footer {
-    background: $dark-bg-txt;
-    color: white;
-    padding: 22px 25px;
-
-    a,
-    p {
-        font-size: 16px;
-        margin: unset;
-        padding-bottom: 7px;
-    }
-}
-
-.footer__logo h3 {
-    font-family: $font-stack-title;
-    font-size: 18px;
-    margin: 0px 0px 16px 0px;
-}
-
-.footer__content {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    i {
-        font-size: 13px;
     }
 }

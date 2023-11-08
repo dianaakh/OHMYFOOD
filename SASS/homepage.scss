@@ -5,64 +5,87 @@ body {
     font-family: $main-font-stack;
     max-width: 480px;
     margin: unset;
-    h2{
+
+    .section__title {
         padding: 50px 0px 25px 0px;
         margin: unset;
     }
+
     a {
         @extend %link-nostyle;
     }
 }
 
+// SECTION LOCATION //
+
+.location {
+    @extend %flex-center;
+    box-shadow: inset 1px 4px 4px 0px rgba(195, 188, 188, 0.65);
+    display: flex;
+    gap: 17px;
+    background: $secondary-bg-color;
+    width: 100%;
+
+    p {
+        color: $dark-bg-txt;
+    }
+}
+
 // SECTION DECOUVERTE + SECTION FONCTIONNEMENT//
 
-.decouverte{
+.decouverte {
     background: $main-bg-color;
     padding: 20px 30px 50px;
-    &__title{
-        text-align: center; 
-    }
-    &__subtitle{
+
+    &__title {
         text-align: center;
+    }
+
+    &__subtitle {
+        @include font-style(18px, 300);
         color: $dark-bg-txt;
-        font-size: 18px;
-        font-weight: 300;
+        text-align: center;
         margin-bottom: 30px;
     }
 }
 
-.button{
-  @extend %flex-center;
-    button{
-    @include btn;
-    @include font-style(16px,500);
+.decouverte__button {
+    @extend %flex-center;
+
+    button {
+        @include btn;
+        @include font-style(16px, 500);
+
         &:hover {
-        opacity: 0.9;
-        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
+            opacity: 0.9;
+            box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
         }
-    }    
+    }
 }
 
-.fonctionnement{
+.fonctionnement {
     margin: 0px 20px 60px;
-    &__style{
+
+    &__style {
         @include grey-bloc;
         display: flex;
         align-items: center;
         position: relative;
         gap: 20px;
     }
-        &__style > i {
-            color: #7E7E7E;
-            font-size: 18px;
-            margin-left: 40px;
-    }
-            i:hover{
-                color: $primary-color;
-            }
-}    
 
-.fonctionnement .list{
+    &__style>i {
+        color: #7E7E7E;
+        font-size: 18px;
+        margin-left: 40px;
+    }
+
+    i:hover {
+        color: $primary-color;
+    }
+}
+
+.fonctionnement .list {
     color: white;
     font-size: 14px;
     background: $primary-color;
@@ -74,7 +97,7 @@ body {
     right: 310px;
 }
 
-.fonctionnement__parts{ 
+.fonctionnement__parts {
     @extend %flex-column;
     @extend %flex-center;
     gap: 25px;
@@ -82,38 +105,43 @@ body {
 
 // RESTAURANTS //
 
-.restaurants{
+.restaurants {
     background: $main-bg-color;
     padding: 0px 18px 40px 18px;
-}
 
-.card {
-    @extend %card;
-    margin-bottom: 20px;
-    position: relative;
-    img{
+    img {
         object-fit: cover;
         object-position: 40% 60%;
         height: 185px;
         width: 100%;
         border-radius: 15px 15px 0px 0px;
     }
-    &__new{
-        @extend %new-card;
-        @extend %flex-center;
-        position: absolute;
-        right: 12px;
-        bottom: 225px;
+
+}
+
+.restaurants__card {
+    @extend %card;
+    margin-bottom: 20px;
+    position: relative;
+
+    &-txt {
+        padding: 16px 0px 16px 13px;
+
+        h3 {
+            margin: 0px 0px 5px 0px;
+        }
+
+        p {
+            @include font-style(17px, 300);
+            margin: unset;
+        }
     }
 }
 
-.card__txt{
-    padding: 16px 0px 16px 13px;
-    h3{
-        margin: 0px 0px 5px 0px;
-    }
-    p{
-        @include font-style(17px,300);
-        margin: unset;
-    }
+.restaurants__card-new {
+    @extend %new-card;
+    @extend %flex-center;
+    position: absolute;
+    right: 12px;
+    bottom: 225px;
 }
