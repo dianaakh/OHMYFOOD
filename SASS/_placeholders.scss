@@ -29,3 +29,13 @@
     font-size: 14px;
     text-align: center;
 }
+
+%btn-like {
+    border: unset;
+    padding: unset;
+    background-color: unset;
+    cursor: pointer;
+    position: relative;
+    height: 32px;
+    width: 32px;
+}

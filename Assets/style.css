@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap");
-.button, .card:active .card__check, .restaurants__card-new, .fonctionnement__parts, .decouverte__button, .location, .header {
+.button, .card:active .card__check, .btn-heart__like, .restaurants__card-new, .fonctionnement__parts, .decouverte__button, .location, .header, .loader {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,6 +31,55 @@ body a {
   text-align: center;
 }
 
+.btn-heart {
+  border: unset;
+  padding: unset;
+  background-color: unset;
+  cursor: pointer;
+  position: relative;
+  height: 32px;
+  width: 32px;
+}
+
+.loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #EAEAEA;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s, visibility 0.5s;
+  animation: visibility 3s linear;
+}
+.loader::before {
+  content: "";
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 10px solid #9356DC;
+  border-top-color: #EAEAEA;
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes visibility {
+  15% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .header {
   position: relative;
 }
@@ -72,38 +120,6 @@ footer p {
 }
 .footer__content i {
   font-size: 13px;
-}
-
-.button, .card:active .card__check, .restaurants__card-new, .fonctionnement__parts, .decouverte__button, .location, .header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.menu__parts, .menu, .fonctionnement__parts {
-  display: flex;
-  flex-direction: column;
-}
-
-body a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.restaurants__card {
-  border-radius: 15px;
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
-}
-
-.restaurants__card-new {
-  width: 80px;
-  height: 29px;
-  background: #99E2D0;
-  border-radius: 2px;
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
-  color: #008766;
-  font-size: 14px;
-  text-align: center;
 }
 
 body {
@@ -158,26 +174,26 @@ body .section__title {
 }
 
 .fonctionnement {
-  margin: 0px 20px 60px;
+  margin: 0px 20px 60px 32px;
 }
 .fonctionnement__style {
   border-radius: 20px;
   background: #F6F6F6;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
-  width: 322px;
+  width: 100%;
   height: 72px;
   display: flex;
   align-items: center;
   position: relative;
   gap: 20px;
 }
+.fonctionnement__style:active > i {
+  color: #9356DC;
+}
 .fonctionnement__style > i {
   color: #7E7E7E;
   font-size: 18px;
   margin-left: 40px;
-}
-.fonctionnement i:hover {
-  color: #9356DC;
 }
 
 .fonctionnement .list {
@@ -230,38 +246,6 @@ body .section__title {
   bottom: 225px;
 }
 
-.button, .card:active .card__check, .header, .location, .decouverte__button, .fonctionnement__parts, .restaurants__card-new {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.menu__parts, .menu, .fonctionnement__parts {
-  display: flex;
-  flex-direction: column;
-}
-
-body a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.restaurants__card {
-  border-radius: 15px;
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
-}
-
-.restaurants__card-new {
-  width: 80px;
-  height: 29px;
-  background: #99E2D0;
-  border-radius: 2px;
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
-  color: #008766;
-  font-size: 14px;
-  text-align: center;
-}
-
 body {
   font-family: Roboto, sans-serif;
   max-width: 480px;
@@ -279,9 +263,35 @@ body .main__img {
   position: relative;
   margin-top: -55px;
 }
-.menu__main-title {
+.menu__section-title {
+  display: flex;
+  gap: 35px;
+}
+.menu__section-title--h1 {
   font: 28px Shrikhand, sans-serif;
   margin: unset;
+}
+
+.btn-heart__full {
+  opacity: 0;
+  background: linear-gradient(201deg, #9356DC -5.2%, #FF79DA 110.74%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.btn-heart__empty {
+  opacity: 1;
+}
+.btn-heart__like {
+  transition: opacity 0.5s;
+  position: absolute;
+  inset: 0;
+}
+.btn-heart:active .btn-heart__empty {
+  opacity: 0;
+}
+.btn-heart:active .btn-heart__full {
+  opacity: 1;
 }
 
 .menu__parts {
@@ -341,7 +351,7 @@ body .main__img {
   font-weight: 500;
   width: 186px;
 }
-.button button button:hover {
+.button button:hover {
   opacity: 0.9;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
 }
