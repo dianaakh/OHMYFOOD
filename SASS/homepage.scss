@@ -70,7 +70,7 @@ body {
         position: relative;
         gap: 20px;
 
-        &:active>i {
+        &:hover>i {
             color: $primary-color;
         }
     }
@@ -81,7 +81,7 @@ body {
         margin-left: 40px;
     }
 
-    //i:active {
+    //i:hover {
     //    color: $primary-color;
     //}
 }

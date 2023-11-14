@@ -34,41 +34,6 @@ body {
     }
 }
 
-// BUTTON HEART //
-
-.btn-heart {
-    @extend %btn-like;
-
-    &__full {
-        opacity: 0;
-        background: $btn-gradient;
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    &__empty {
-        opacity: 1;
-    }
-
-    &__like {
-        @extend %flex-center;
-        transition: opacity 0.5s;
-        position: absolute;
-        inset: 0;
-    }
-
-    &:active {
-        .btn-heart__empty {
-            opacity: 0;
-        }
-
-        .btn-heart__full {
-            opacity: 1;
-        }
-    }
-}
-
 // MENUS //
 
 .menu__parts {
