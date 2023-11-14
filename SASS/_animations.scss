@@ -2,19 +2,17 @@
 
 .loader {
     @extend %flex-center;
-    color: $primary-color; 
+    color: $primary-color;
     background-color: $main-bg-color;
     position: fixed;
     width: 100%;
     height: 100%;
     z-index: 1;
     opacity: 0;
-    transition: visibility 0.5s;
-    //animation: 2s ease-in-out infinite;
-    animation: visibility 3s linear;
+    animation: visibility 3s ease-out;
 
     &__circle {
-       @extend %flex-center;
+        @extend %flex-center;
         position: relative;
         width: 20px;
         height: 20px;
@@ -23,9 +21,9 @@
         margin: 0 10px;
         background-color: transparent;
         animation: circle 2s ease-in-out infinite;
-      }
-      
-      &__circle &__dot {
+    }
+
+    &__circle &__dot {
         position: absolute;
         transform: translate(-50%, -50%);
         width: 16px;
@@ -33,130 +31,92 @@
         border-radius: 50%;
         background-color: $primary-color;
         animation: dot 2s ease-in-out infinite;
-      }
-      
-      &__circle &__outline {
+    }
+
+    &__circle &__outline {
         position: absolute;
         transform: translate(-50%, -50%);
         width: 20px;
         height: 20px;
         border-radius: 50%;
         animation: outline 2s ease-in-out infinite;
+    }
+}
+
+@for $i from 2 through 5 {
+    $delay: $i * 0.3s;
+  
+    .loader__circle:nth-child(#{$i}) {
+      animation-delay: 0.3s;
+      
+      .loader__dot,
+      .loader__outline {
+        animation-delay: 0.3s;
       }
-  }
-
-  .loader__circle:nth-child(2) {
-    animation-delay: 0.3s;
-  }
-  
-  .loader__circle:nth-child(3) {
-    animation-delay: 0.6s;
-  }
-  
-  .loader__circle:nth-child(4) {
-    animation-delay: 0.9s;
-  }
-  
-  .loader__circle:nth-child(5) {
-    animation-delay: 1.2s;
-  }
-  
-  .loader__circle:nth-child(2) .loader__dot {
-    animation-delay: 0.3s;
-  }
-  
-  .loader__circle:nth-child(3) .loader__dot {
-    animation-delay: 0.6s;
-  }
-  
-  .loader__circle:nth-child(4) .loader__dot {
-    animation-delay: 0.9s;
-  }
-  
-  .loader__circle:nth-child(5) .loader__dot {
-    animation-delay: 1.2s;
-  }
-  
-  .loader__circle:nth-child(1) .loader__outline {
-    animation-delay: 0.9s;
-  }
-  
-  .loader__circle:nth-child(2) .loader__outline {
-    animation-delay: 1.2s;
-  }
-  
-  .loader__circle:nth-child(3) .loader__outline {
-    animation-delay: 1.5s;
-  }
-  
-  .loader__circle:nth-child(4) .loader__outline {
-    animation-delay: 1.8s;
-  }
-  
-  .loader__circle:nth-child(5) .loader__outline {
-    animation-delay: 2.1s;
-  }
-  
-  @keyframes circle {
-    0% {
-      transform: scale(1);
-      opacity: 1;
-    }
-  
-    50% {
-      transform: scale(1.5);
-      opacity: 0.5;
-    }
-  
-    100% {
-      transform: scale(1);
-      opacity: 1;
-    }
-  }
-  
-  @keyframes dot {
-    0% {
-      transform: scale(1);
-    }
-  
-    50% {
-      transform: scale(0);
-    }
-  
-    100% {
-      transform: scale(1);
-    }
-  }
-  
-  @keyframes outline {
-    0% {
-      transform: scale(0);
-      outline: solid 20px $primary-color;
-      outline-offset: 0;
-      opacity: 1;
-    }
-  
-    100% {
-      transform: scale(1);
-      outline: solid 0 transparent;
-      outline-offset: 20px;
-      opacity: 0;
     }
   }
 
-  @keyframes visibility {
-    15% {
+@keyframes circle {
+    0% {
+        transform: scale(1);
         opacity: 1;
     }
 
-    80% {
-        opacity: 0.3;
+    50% {
+        transform: scale(1.5);
+        opacity: 0.5;
     }
 
     100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes dot {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes outline {
+    0% {
+        transform: scale(0);
+        outline: solid 20px $primary-color;
+        outline-offset: 0;
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        outline: solid 0 transparent;
+        outline-offset: 20px;
         opacity: 0;
     }
 }
+
+@keyframes visibility {
+    0% {
+        visibility: visible;
+        opacity: 0.9;
+    }
+    70% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
 
 // ANIMATION COEUR //
 
@@ -194,3 +154,24 @@
 }
 
 // ANIMATION MENUS //
+
+.progressive-display{
+    animation: fade-in 1s backwards;
+    @for $i from 1 through 10 {
+        
+        &--#{$i} {
+            animation-delay: 0.2s * $i;
+        }
+    }
+  }
+
+@keyframes fade-in {
+    0%{
+        opacity: 0;
+        margin-top: 10px;
+    }
+    100%{
+        opacity: 1;
+        margin-top: 0px;
+    }
+}

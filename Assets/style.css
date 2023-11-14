@@ -49,8 +49,7 @@ body a {
   height: 100%;
   z-index: 1;
   opacity: 0;
-  transition: visibility 0.5s;
-  animation: visibility 3s linear;
+  animation: visibility 3s ease-out;
 }
 .loader__circle {
   position: relative;
@@ -83,53 +82,33 @@ body a {
 .loader__circle:nth-child(2) {
   animation-delay: 0.3s;
 }
-
-.loader__circle:nth-child(3) {
-  animation-delay: 0.6s;
-}
-
-.loader__circle:nth-child(4) {
-  animation-delay: 0.9s;
-}
-
-.loader__circle:nth-child(5) {
-  animation-delay: 1.2s;
-}
-
-.loader__circle:nth-child(2) .loader__dot {
+.loader__circle:nth-child(2) .loader__dot,
+.loader__circle:nth-child(2) .loader__outline {
   animation-delay: 0.3s;
 }
 
-.loader__circle:nth-child(3) .loader__dot {
-  animation-delay: 0.6s;
+.loader__circle:nth-child(3) {
+  animation-delay: 0.3s;
 }
-
-.loader__circle:nth-child(4) .loader__dot {
-  animation-delay: 0.9s;
-}
-
-.loader__circle:nth-child(5) .loader__dot {
-  animation-delay: 1.2s;
-}
-
-.loader__circle:nth-child(1) .loader__outline {
-  animation-delay: 0.9s;
-}
-
-.loader__circle:nth-child(2) .loader__outline {
-  animation-delay: 1.2s;
-}
-
+.loader__circle:nth-child(3) .loader__dot,
 .loader__circle:nth-child(3) .loader__outline {
-  animation-delay: 1.5s;
+  animation-delay: 0.3s;
 }
 
+.loader__circle:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.loader__circle:nth-child(4) .loader__dot,
 .loader__circle:nth-child(4) .loader__outline {
-  animation-delay: 1.8s;
+  animation-delay: 0.3s;
 }
 
+.loader__circle:nth-child(5) {
+  animation-delay: 0.3s;
+}
+.loader__circle:nth-child(5) .loader__dot,
 .loader__circle:nth-child(5) .loader__outline {
-  animation-delay: 2.1s;
+  animation-delay: 0.3s;
 }
 
 @keyframes circle {
@@ -172,14 +151,16 @@ body a {
   }
 }
 @keyframes visibility {
-  15% {
-    opacity: 1;
+  0% {
+    visibility: visible;
+    opacity: 0.9;
   }
-  80% {
-    opacity: 0.3;
+  70% {
+    opacity: 0.8;
   }
   100% {
     opacity: 0;
+    visibility: hidden;
   }
 }
 .btn-heart__full {
@@ -204,6 +185,50 @@ body a {
   opacity: 1;
 }
 
+.progressive-display {
+  animation: fade-in 1s backwards;
+}
+.progressive-display--1 {
+  animation-delay: 0.2s;
+}
+.progressive-display--2 {
+  animation-delay: 0.4s;
+}
+.progressive-display--3 {
+  animation-delay: 0.6s;
+}
+.progressive-display--4 {
+  animation-delay: 0.8s;
+}
+.progressive-display--5 {
+  animation-delay: 1s;
+}
+.progressive-display--6 {
+  animation-delay: 1.2s;
+}
+.progressive-display--7 {
+  animation-delay: 1.4s;
+}
+.progressive-display--8 {
+  animation-delay: 1.6s;
+}
+.progressive-display--9 {
+  animation-delay: 1.8s;
+}
+.progressive-display--10 {
+  animation-delay: 2s;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    margin-top: 10px;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 0px;
+  }
+}
 .header {
   position: relative;
 }
@@ -368,6 +393,12 @@ body .section__title {
   position: absolute;
   right: 12px;
   bottom: 225px;
+}
+
+.btn-heart-card {
+  position: absolute;
+  bottom: 33px;
+  right: 25px;
 }
 
 body {
