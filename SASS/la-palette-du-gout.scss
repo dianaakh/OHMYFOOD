@@ -50,43 +50,60 @@ body {
 }
 
 .card {
+    height: 45px;
     background: white;
     border-radius: 15px;
     padding: 15px;
-    display: flex;
-    justify-content: space-between;
+    display: flex; // disposition des élements de la div card en ligne //
     box-shadow: 0px 4.01149px 15.0431px 0px rgba(0, 0, 0, 0.10);
 
-    //&__content {
-    //overflow:hidden;
-    //text-overflow: ellipsis;
-    //white-space: nowrap;
-    //}
+    &__content {
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100%;
+    }
 
     &__title {
         margin: 0px 0px 5px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
     }
 
     &__subtitle {
         @include font-style(15px, 300);
         margin: unset;
+        overflow: hidden;
+
+        white-space: nowrap;
+        text-overflow: ellipsis;
     }
 
     &__price {
-        text-align: center;
         font-weight: 700;
+        margin: 10px 0px 0px 10px;
+    }
+
+    &__check {
+        display: none;
     }
 }
 
-.card:active {
+.card:hover {
+    .card__price {
+        margin: 0px 15px 0px 15px;
+    }
+
     .card__check {
         @extend %flex-center;
         background-color: $tertiary-color;
-        width: 50px;
+        width: 90px;
+        margin: -15px -15px -15px 0px;
+        border-radius: 0px 15px 15px 0px;
 
         i {
             color: $tertiary-color;
-            border: 2.5px solid white;
+            padding: 3px;
             border-radius: 50px;
             background-color: white;
         }

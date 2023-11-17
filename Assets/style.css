@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap");
-.button, .card:active .card__check, .restaurants__card-new, .fonctionnement__parts, .decouverte__button, .location, .header, .btn-heart__like, .loader__circle, .loader {
+.button, .card:hover .card__check, .restaurants__card-new, .fonctionnement__parts, .decouverte__button, .location, .header, .btn-heart__like, .loader__circle, .loader {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -441,33 +441,52 @@ body .main__img {
 }
 
 .card {
+  height: 45px;
   background: white;
   border-radius: 15px;
   padding: 15px;
   display: flex;
-  justify-content: space-between;
   box-shadow: 0px 4.01149px 15.0431px 0px rgba(0, 0, 0, 0.1);
+}
+.card__content {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
 }
 .card__title {
   margin: 0px 0px 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .card__subtitle {
   font-size: 15px;
   font-weight: 300;
   margin: unset;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .card__price {
-  text-align: center;
   font-weight: 700;
+  margin: 10px 0px 0px 10px;
+}
+.card__check {
+  display: none;
 }
 
-.card:active .card__check {
-  background-color: #99E2D0;
-  width: 50px;
+.card:hover .card__price {
+  margin: 0px 15px 0px 15px;
 }
-.card:active .card__check i {
+.card:hover .card__check {
+  background-color: #99E2D0;
+  width: 90px;
+  margin: -15px -15px -15px 0px;
+  border-radius: 0px 15px 15px 0px;
+}
+.card:hover .card__check i {
   color: #99E2D0;
-  border: 2.5px solid white;
+  padding: 3px;
   border-radius: 50px;
   background-color: white;
 }
