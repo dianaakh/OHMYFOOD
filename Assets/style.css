@@ -273,7 +273,7 @@ footer p {
 
 body {
   font-family: Roboto, sans-serif;
-  max-width: 480px;
+  max-width: 768px;
   margin: unset;
 }
 body .section__title {
@@ -403,7 +403,7 @@ body .section__title {
 
 body {
   font-family: Roboto, sans-serif;
-  max-width: 480px;
+  max-width: 768px;
   margin: unset;
 }
 body .main__img {
