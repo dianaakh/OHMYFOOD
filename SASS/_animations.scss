@@ -35,7 +35,7 @@
 
     &__circle &__outline {
         position: absolute;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); // déplacement de l'élement sur X et Y
         width: 20px;
         height: 20px;
         border-radius: 50%;
@@ -45,20 +45,20 @@
 
 @for $i from 2 through 5 {
     $delay: $i * 0.3s;
-  
+
     .loader__circle:nth-child(#{$i}) {
-      animation-delay: 0.3s;
-      
-      .loader__dot,
-      .loader__outline {
         animation-delay: 0.3s;
-      }
+
+        .loader__dot,
+        .loader__outline {
+            animation-delay: 0.3s;
+        }
     }
-  }
+}
 
 @keyframes circle {
     0% {
-        transform: scale(1);
+        transform: scale(1); // taille de l'affichage des éléments du loader 
         opacity: 1;
     }
 
@@ -108,9 +108,11 @@
         visibility: visible;
         opacity: 0.9;
     }
+
     70% {
         opacity: 0.8;
     }
+
     100% {
         opacity: 0;
         visibility: hidden;
@@ -155,22 +157,24 @@
 
 // ANIMATION MENUS //
 
-.progressive-display{
+.progressive-display {
     animation: fade-in 1s backwards;
+
     @for $i from 1 through 10 {
-        
+
         &--#{$i} {
             animation-delay: 0.2s * $i;
         }
     }
-  }
+}
 
 @keyframes fade-in {
-    0%{
+    0% {
         opacity: 0;
         margin-top: 10px;
     }
-    100%{
+
+    100% {
         opacity: 1;
         margin-top: 0px;
     }

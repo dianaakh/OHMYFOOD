@@ -8,7 +8,9 @@ body {
     }
 
     .main__img {
-        width: 100%
+        width: 100%;
+        height: 275px;
+        object-fit: cover;
     }
 }
 
@@ -66,7 +68,6 @@ body {
     &__title {
         margin: 0px 0px 5px;
         overflow: hidden;
-        white-space: nowrap;
         text-overflow: ellipsis;
     }
 
@@ -74,24 +75,33 @@ body {
         @include font-style(15px, 300);
         margin: unset;
         overflow: hidden;
-
-        white-space: nowrap;
         text-overflow: ellipsis;
     }
 
     &__price {
         font-weight: 700;
-        margin: 10px 0px 0px 10px;
+        //margin: 10px 0px 0px 10px;
     }
 
     &__check {
         display: none;
+        animation: slide-right 0.4s 0.1s;
     }
+    @keyframes slide-right {
+        0% {
+            margin-right: 0px;
+        }
+
+        100% {
+            margin-right: -60px;
+        }
+    }
+
 }
 
 .card:hover {
     .card__price {
-        margin: 0px 15px 0px 15px;
+        //margin: 0px 15px 0px 15px;
     }
 
     .card__check {
@@ -100,6 +110,7 @@ body {
         width: 90px;
         margin: -15px -15px -15px 0px;
         border-radius: 0px 15px 15px 0px;
+        animation: slide-left 0.5s both 0.1s;
 
         i {
             color: $tertiary-color;
@@ -108,6 +119,17 @@ body {
             background-color: white;
         }
     }
+
+    @keyframes slide-left {
+        0% {
+            margin-right: -60px;
+        }
+
+        100% {
+            margin-right: -15px;
+        }
+    }
+
 }
 
 // BUTTON //
