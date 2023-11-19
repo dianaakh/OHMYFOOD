@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap");
-.button, .card:hover .card__check, .restaurants__card-new, .fonctionnement__parts, .decouverte__button, .location, .header {
+.button, .card:hover .card__check, .restaurants__card-new, .fonctionnement__parts, .decouverte__button, .location, .header, .btn-heart__like, .loader__circle, .loader {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,6 +31,204 @@ body a {
   text-align: center;
 }
 
+.btn-heart {
+  border: unset;
+  padding: unset;
+  background-color: unset;
+  cursor: pointer;
+  position: relative;
+  height: 32px;
+  width: 32px;
+}
+
+.loader {
+  color: #9356DC;
+  background-color: #F6F6F6;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  animation: visibility 3s ease-out;
+}
+.loader__circle {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: solid 2px #9356DC;
+  border-radius: 50%;
+  margin: 0 10px;
+  background-color: transparent;
+  animation: circle 2s ease-in-out infinite;
+}
+.loader__circle .loader__dot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #9356DC;
+  animation: dot 2s ease-in-out infinite;
+}
+.loader__circle .loader__outline {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  animation: outline 2s ease-in-out infinite;
+}
+
+.loader__circle:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.loader__circle:nth-child(2) .loader__dot,
+.loader__circle:nth-child(2) .loader__outline {
+  animation-delay: 0.3s;
+}
+
+.loader__circle:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.loader__circle:nth-child(3) .loader__dot,
+.loader__circle:nth-child(3) .loader__outline {
+  animation-delay: 0.3s;
+}
+
+.loader__circle:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.loader__circle:nth-child(4) .loader__dot,
+.loader__circle:nth-child(4) .loader__outline {
+  animation-delay: 0.3s;
+}
+
+.loader__circle:nth-child(5) {
+  animation-delay: 0.3s;
+}
+.loader__circle:nth-child(5) .loader__dot,
+.loader__circle:nth-child(5) .loader__outline {
+  animation-delay: 0.3s;
+}
+
+@keyframes circle {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes dot {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes outline {
+  0% {
+    transform: scale(0);
+    outline: solid 20px #9356DC;
+    outline-offset: 0;
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    outline: solid 0 transparent;
+    outline-offset: 20px;
+    opacity: 0;
+  }
+}
+@keyframes visibility {
+  0% {
+    visibility: visible;
+    opacity: 0.9;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.btn-heart__full {
+  opacity: 0;
+  background: linear-gradient(201deg, #9356DC -5.2%, #FF79DA 110.74%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.btn-heart__empty {
+  opacity: 1;
+}
+.btn-heart__like {
+  transition: opacity 0.5s;
+  position: absolute;
+  inset: 0;
+}
+.btn-heart:hover .btn-heart__empty {
+  opacity: 0;
+}
+.btn-heart:hover .btn-heart__full {
+  opacity: 1;
+}
+
+.progressive-display {
+  animation: fade-in 1s backwards;
+}
+.progressive-display--1 {
+  animation-delay: 0.2s;
+}
+.progressive-display--2 {
+  animation-delay: 0.4s;
+}
+.progressive-display--3 {
+  animation-delay: 0.6s;
+}
+.progressive-display--4 {
+  animation-delay: 0.8s;
+}
+.progressive-display--5 {
+  animation-delay: 1s;
+}
+.progressive-display--6 {
+  animation-delay: 1.2s;
+}
+.progressive-display--7 {
+  animation-delay: 1.4s;
+}
+.progressive-display--8 {
+  animation-delay: 1.6s;
+}
+.progressive-display--9 {
+  animation-delay: 1.8s;
+}
+.progressive-display--10 {
+  animation-delay: 2s;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    margin-top: 10px;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 0px;
+  }
+}
 .header {
   position: relative;
 }
@@ -41,10 +239,19 @@ body a {
   top: 16px;
   left: 17px;
 }
+@media screen and (min-width: 1024px) {
+  .header__icon {
+    top: 30px;
+  }
+}
 .header__logo {
   width: 162px;
-  font-size: 30px;
   padding: 14px 89px 10px 89px;
+}
+@media screen and (min-width: 1024px) {
+  .header__logo {
+    padding: 30px;
+  }
 }
 
 footer {
@@ -56,6 +263,11 @@ footer {
   footer {
     display: flex;
     flex-direction: row-reverse;
+    gap: 30px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  footer {
     gap: 70px;
   }
 }
@@ -65,6 +277,11 @@ footer p {
   padding-bottom: 7px;
 }
 @media screen and (min-width: 768.1px) {
+  footer p {
+    margin-right: 15px;
+  }
+}
+@media screen and (min-width: 1024px) {
   footer p {
     margin-right: 25px;
   }
@@ -93,13 +310,7 @@ footer p {
 
 body {
   font-family: Roboto, sans-serif;
-  max-width: 768px;
-  margin: unset;
-}
-@media (min-width: 768.1px) {
-  body {
-    max-width: 1440px;
-  }
+  margin: auto;
 }
 body .section__title {
   padding: 50px 0px 25px 0px;
@@ -123,9 +334,10 @@ body .section__title {
 .decouverte__title {
   text-align: center;
 }
-@media (min-width: 768.1px) {
+@media screen and (min-width: 1024px) {
   .decouverte__title h1 {
     font-size: 40px;
+    margin: 0;
   }
 }
 .decouverte__subtitle {
@@ -155,7 +367,7 @@ body .section__title {
 .fonctionnement {
   margin: 0px 20px 60px 32px;
 }
-@media screen and (min-width: 768.1px) {
+@media screen and (min-width: 1024px) {
   .fonctionnement {
     padding: 0px 50px;
   }
@@ -206,7 +418,7 @@ body .section__title {
   background: #F6F6F6;
   padding: 0px 18px 40px 18px;
 }
-@media screen and (min-width: 768.1px) {
+@media screen and (min-width: 1024px) {
   .restaurants {
     padding: 0px 50px;
   }
@@ -221,7 +433,7 @@ body .section__title {
   width: 100%;
   border-radius: 15px 15px 0px 0px;
 }
-@media screen and (min-width: 768.1px) {
+@media screen and (min-width: 1024px) {
   .restaurants__position {
     display: flex;
     gap: 7%;
@@ -257,15 +469,15 @@ body .section__title {
   right: 25px;
 }
 
-body {
-  font-family: Roboto, sans-serif;
-  max-width: 768px;
-  margin: unset;
-}
 body .main__img {
   width: 100%;
   height: 275px;
   object-fit: cover;
+}
+@media screen and (min-width: 1024px) {
+  body .main__img {
+    height: 400px;
+  }
 }
 
 .menu {
@@ -276,9 +488,25 @@ body .main__img {
   position: relative;
   margin-top: -55px;
 }
+@media screen and (min-width: 768.1px) {
+  .menu {
+    width: 80%;
+    margin: -55px auto 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .menu {
+    width: 70%;
+  }
+}
 .menu__section-title {
   display: flex;
   gap: 35px;
+}
+@media screen and (min-width: 768.1px) {
+  .menu__section-title {
+    justify-content: center;
+  }
 }
 .menu__section-title--h1 {
   font: 28px Shrikhand, sans-serif;
@@ -287,6 +515,17 @@ body .main__img {
 
 .menu__parts {
   gap: 12px;
+}
+@media screen and (min-width: 768.1px) {
+  .menu__parts {
+    width: 70%;
+    margin: auto;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .menu__parts {
+    width: 60%;
+  }
 }
 .menu__parts-title {
   border-bottom: 3px solid #99E2D0;

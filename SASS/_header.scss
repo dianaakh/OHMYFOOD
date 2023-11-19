@@ -8,12 +8,18 @@
         position: absolute;
         top: 16px;
         left: 17px;
+
+        @include large-device{
+            top: 30px;
+        }
     } 
 
     &__logo {
         width: 162px;
-        font-size: 30px;
         padding: 14px 89px 10px 89px;
+
+        @include large-device{
+            padding: 30px;
+        }
     }
-     
 }

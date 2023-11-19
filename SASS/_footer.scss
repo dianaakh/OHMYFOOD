@@ -3,12 +3,14 @@ footer {
     color: white;
     padding: 22px 25px;
 
-    @media screen and (min-width:768.1px) {
+    @include medium-device {
         display: flex;
         flex-direction: row-reverse;
-        gap: 70px;
+        gap: 30px;
+    }
 
-        
+    @include large-device {
+        gap: 70px;
     }
 
     p {
@@ -16,7 +18,11 @@ footer {
         margin: unset;
         padding-bottom: 7px;
 
-        @media screen and (min-width:768.1px) {
+        @include medium-device {
+            margin-right: 15px;
+        }
+
+        @include large-device {
             margin-right: 25px;
         }
     }
@@ -30,7 +36,7 @@ footer {
 }
 
 .footer__links {
-    @media screen and (min-width:768.1px) {
+    @include medium-device {
         display: flex;
         margin-top: 20px;
         gap: 10px;

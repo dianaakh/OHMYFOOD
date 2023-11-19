@@ -1,11 +1,6 @@
 body {
     font-family: $main-font-stack;
-    max-width: 768px;
-    margin: unset;
-
-    @media (min-width:768.1px) {
-        max-width: 1440px;
-    }
+    margin: auto;
 
     .section__title {
         padding: 50px 0px 25px 0px;
@@ -14,7 +9,6 @@ body {
 
     a {
         @extend %link-nostyle;
-        //width: 100%;
     }
 }
 
@@ -43,8 +37,9 @@ body {
         text-align: center;
 
         h1 {
-            @media (min-width:768.1px) {
+            @include large-device {
                 font-size: 40px;
+                margin: 0;
             }
         }
     }
@@ -63,18 +58,13 @@ body {
     button {
         @include btn;
         @include font-style(16px, 500);
-
-        &:hover {
-            opacity: 0.9;
-            box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
-        }
     }
 }
 
 .fonctionnement {
     margin: 0px 20px 60px 32px;
 
-    @media screen and (min-width:768.1px) {
+    @include large-device {
         padding: 0px 50px;
     }
 
@@ -114,7 +104,7 @@ body {
     @extend %flex-center;
     gap: 25px;
 
-    @media screen and (min-width:768.1px) {
+    @include medium-device {
         flex-direction: row;
         gap: 5%;
     }
@@ -127,7 +117,7 @@ body {
     background: $main-bg-color;
     padding: 0px 18px 40px 18px;
 
-    @media screen and (min-width:768.1px) {
+    @include large-device{
         padding: 0px 50px;
     }
 
@@ -144,7 +134,7 @@ body {
     }
 
     &__position {
-        @media screen and (min-width:768.1px) {
+        @include large-device {
             display: flex;
             gap: 7%;
             padding-bottom: 45px;

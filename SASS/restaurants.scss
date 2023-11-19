@@ -1,16 +1,12 @@
 body {
-    font-family: $main-font-stack;
-    max-width: 768px;
-    margin: unset;
-
-    a {
-        @extend %link-nostyle;
-    }
-
     .main__img {
         width: 100%;
         height: 275px;
         object-fit: cover;
+
+        @include large-device {
+            height: 400px;
+        }
     }
 }
 
@@ -25,9 +21,22 @@ body {
     position: relative;
     margin-top: -55px;
 
+    @include medium-device {
+        width: 80%;
+        margin: -55px auto 0;
+    }
+
+    @include large-device {
+        width: 70%;
+    }
+
     &__section-title {
         display: flex;
         gap: 35px;
+
+        @include medium-device {
+            justify-content: center;
+        }
 
         &--h1 {
             font: 28px $font-stack-title;
@@ -39,6 +48,15 @@ body {
 .menu__parts {
     @extend %flex-column;
     gap: 12px;
+
+    @include medium-device {
+        width: 70%;
+        margin: auto;
+    }
+
+    @include large-device {
+        width: 60%;
+    }
 
     &-title {
         border-bottom: 3px solid $tertiary-color;
@@ -80,13 +98,13 @@ body {
 
     &__price {
         font-weight: 700;
-        //margin: 10px 0px 0px 10px;
     }
 
     &__check {
         display: none;
         animation: slide-right 0.4s 0.1s;
     }
+
     @keyframes slide-right {
         0% {
             margin-right: 0px;
@@ -96,14 +114,9 @@ body {
             margin-right: -60px;
         }
     }
-
 }
 
 .card:hover {
-    .card__price {
-        //margin: 0px 15px 0px 15px;
-    }
-
     .card__check {
         @extend %flex-center;
         background-color: $tertiary-color;
@@ -129,7 +142,6 @@ body {
             margin-right: -15px;
         }
     }
-
 }
 
 // BUTTON //
@@ -141,10 +153,5 @@ body {
         @include btn;
         @include font-style(16px, 500);
         width: 186px;
-
-        &:hover {
-            opacity: 0.9;
-            box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
-        }
     }
 }
