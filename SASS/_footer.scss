@@ -3,25 +3,46 @@ footer {
     color: white;
     padding: 22px 25px;
 
+    @media screen and (min-width:768.1px) {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 70px;
+
+        
+    }
+
     p {
         font-size: 16px;
         margin: unset;
         padding-bottom: 7px;
+
+        @media screen and (min-width:768.1px) {
+            margin-right: 25px;
+        }
     }
 }
 
-.footer__logo h3 {
-    font-family: $font-stack-title;
-    font-size: 18px;
-    margin: 0px 0px 16px 0px;
+.footer__logo {
+    h3 {
+        font-family: $font-stack-title;
+        font-size: 18px;
+    }
 }
 
-.footer__content {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.footer__links {
+    @media screen and (min-width:768.1px) {
+        display: flex;
+        margin-top: 20px;
+        gap: 10px;
+    }
 
-    i {
-        font-size: 13px;
+    &--content {
+        display: flex;
+        gap: 10px;
+
+        i {
+            font-size: 13px;
+            margin-top: 3px;
+        }
     }
 }
