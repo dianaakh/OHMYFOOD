@@ -356,6 +356,7 @@ body .section__title {
   color: white;
   padding: 13px 19px;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  transition: opacity 0.4s;
   font-size: 16px;
   font-weight: 500;
 }
@@ -564,6 +565,7 @@ body .main__img {
 }
 .card__price {
   font-weight: 700;
+  margin-right: 10px;
 }
 .card__check {
   display: none;
@@ -571,19 +573,19 @@ body .main__img {
 }
 @keyframes slide-right {
   0% {
-    margin-right: 0px;
+    margin-left: 0px;
   }
   100% {
-    margin-right: -60px;
+    margin-left: -15px;
   }
 }
 
 .card:hover .card__check {
   background-color: #99E2D0;
-  width: 90px;
-  margin: -15px -15px -15px 0px;
+  width: 70px;
+  padding: 15px 15px 15px 0px;
   border-radius: 0px 15px 15px 0px;
-  animation: slide-left 0.5s both 0.1s;
+  animation: slide-left 0.4s both 0.1s;
 }
 .card:hover .card__check i {
   color: #99E2D0;
@@ -593,7 +595,7 @@ body .main__img {
 }
 @keyframes slide-left {
   0% {
-    margin-right: -60px;
+    margin-right: 0px;
   }
   100% {
     margin-right: -15px;
@@ -608,6 +610,7 @@ body .main__img {
   color: white;
   padding: 13px 19px;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  transition: opacity 0.4s;
   font-size: 16px;
   font-weight: 500;
   width: 186px;
