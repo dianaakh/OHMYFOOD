@@ -10,7 +10,7 @@ body {
     }
 }
 
-// MENU //
+// MENU AVEC ANIMATION CHECK//
 
 .menu {
     @extend %flex-column;
@@ -98,6 +98,7 @@ body {
 
     &__price {
         font-weight: 700;
+        margin-right: 10px;
     }
 
     &__check {
@@ -107,11 +108,11 @@ body {
 
     @keyframes slide-right {
         0% {
-            margin-right: 0px;
+            margin-left: 0px;
         }
 
         100% {
-            margin-right: -60px;
+            margin-left: -15px;
         }
     }
 }
@@ -120,10 +121,11 @@ body {
     .card__check {
         @extend %flex-center;
         background-color: $tertiary-color;
-        width: 90px;
-        margin: -15px -15px -15px 0px;
+        width: 70px;
+        padding: 15px 15px 15px 0px;
         border-radius: 0px 15px 15px 0px;
-        animation: slide-left 0.5s both 0.1s;
+        animation: slide-left 0.4s both 0.1s;
+        //animation-timing-function: 1s;
 
         i {
             color: $tertiary-color;
@@ -135,7 +137,7 @@ body {
 
     @keyframes slide-left {
         0% {
-            margin-right: -60px;
+            margin-right: 0px;
         }
 
         100% {
@@ -150,8 +152,7 @@ body {
     @extend %flex-center;
 
     button {
-        @include btn;
-        @include font-style(16px, 500);
-        width: 186px;
+        @include btn(186px);
+        @include font-style(16px, 500); 
     }
 }

@@ -1,4 +1,4 @@
-@mixin btn {
+@mixin btn ($width) {
     border-radius: 25px;
     background: $btn-gradient;
     border: unset;
@@ -6,6 +6,8 @@
     color: white;
     padding: 13px 19px;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    transition: opacity 0.4s;
+    width: $width;
 
     &:hover {
         opacity: 0.9;
@@ -33,7 +35,7 @@
 }
 
 @mixin large-device {
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 1024.1px) and (max-width: 1440px) {
         @content;
     }
 }
