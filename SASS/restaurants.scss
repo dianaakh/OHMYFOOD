@@ -76,56 +76,44 @@ body {
     padding: 15px;
     display: flex; // disposition des élements de la div card en ligne //
     box-shadow: 0px 4.01149px 15.0431px 0px rgba(0, 0, 0, 0.10);
+    overflow: hidden; // cache l'élement check
+    cursor: pointer;
 
-    &__content {
+    &__txt {
         overflow: hidden;
         white-space: nowrap;
         width: 100%;
-    }
 
-    &__title {
-        margin: 0px 0px 5px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    &__subtitle {
-        @include font-style(15px, 300);
-        margin: unset;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    &__price {
-        font-weight: 700;
-        margin-right: 10px;
-    }
-
-    &__check {
-        display: none;
-        animation: slide-right 0.4s 0.1s;
-    }
-
-    @keyframes slide-right {
-        0% {
-            margin-left: 0px;
+        &--title {
+            margin: 0px 0px 5px;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
-        100% {
-            margin-left: -15px;
+        &--subtitle {
+            @include font-style(15px, 300);
+            margin: unset;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
 }
 
-.card:hover {
-    .card__check {
+.card__content {
+    display: flex;
+    margin-right: -65px;
+
+    &--price {
+        font-weight: 700;
+        margin-right: 15px;
+    }
+
+    &--check {
         @extend %flex-center;
         background-color: $tertiary-color;
-        width: 70px;
-        padding: 15px 15px 15px 0px;
+        width: 65px;
         border-radius: 0px 15px 15px 0px;
-        animation: slide-left 0.4s both 0.1s;
-        //animation-timing-function: 1s;
+        margin: -15px -15px -15px 0px;
 
         i {
             color: $tertiary-color;
@@ -134,15 +122,19 @@ body {
             background-color: white;
         }
     }
+}
 
-    @keyframes slide-left {
-        0% {
-            margin-right: 0px;
-        }
+.card:hover {
+    .card__content {
+        transform: translateX(-65px); // fait glisser le check vers la gauche
+        transition: transform 0.4s ease-in;
+    }
+}
 
-        100% {
-            margin-right: -15px;
-        }
+.card:not(:hover) {
+    .card__content {
+        transform: translateX(0); // fait glisser le check vers la droite
+        transition: transform 0.4s ease-in;
     }
 }
 
@@ -153,6 +145,6 @@ body {
 
     button {
         @include btn(186px);
-        @include font-style(16px, 500); 
+        @include font-style(16px, 500);
     }
 }

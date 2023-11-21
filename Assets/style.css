@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap");
-.button, .card:hover .card__check, .restaurants__card-new, .fonctionnement__parts, .decouverte__button, .location, .header, .btn-heart__like, .loader__circle, .loader {
+.button, .card__content--check, .restaurants__card-new, .fonctionnement__parts, .decouverte__button, .location, .header, .btn-heart__like, .loader__circle, .loader {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -239,7 +239,7 @@ body a {
   top: 16px;
   left: 17px;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024.1px) and (max-width: 1440px) {
   .header__icon {
     top: 30px;
   }
@@ -248,7 +248,7 @@ body a {
   width: 162px;
   padding: 14px 89px 10px 89px;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024.1px) and (max-width: 1440px) {
   .header__logo {
     padding: 30px;
   }
@@ -266,7 +266,7 @@ footer {
     gap: 30px;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024.1px) and (max-width: 1440px) {
   footer {
     gap: 70px;
   }
@@ -281,7 +281,7 @@ footer p {
     margin-right: 15px;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024.1px) and (max-width: 1440px) {
   footer p {
     margin-right: 25px;
   }
@@ -334,7 +334,7 @@ body .section__title {
 .decouverte__title {
   text-align: center;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024.1px) and (max-width: 1440px) {
   .decouverte__title h1 {
     font-size: 40px;
     margin: 0;
@@ -347,7 +347,6 @@ body .section__title {
   text-align: center;
   margin-bottom: 30px;
 }
-
 .decouverte__button button {
   border-radius: 25px;
   background: linear-gradient(201deg, #9356DC -5.2%, #FF79DA 110.74%);
@@ -357,6 +356,7 @@ body .section__title {
   padding: 13px 19px;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
   transition: opacity 0.4s;
+  width: 218px;
   font-size: 16px;
   font-weight: 500;
 }
@@ -368,9 +368,14 @@ body .section__title {
 .fonctionnement {
   margin: 0px 20px 60px 32px;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768.1px) {
   .fonctionnement {
-    padding: 0px 50px;
+    margin: 0% 7% 7% 7%;
+  }
+}
+@media screen and (min-width: 1024.1px) and (max-width: 1440px) {
+  .fonctionnement {
+    margin: 0% 9% 7% 10%;
   }
 }
 .fonctionnement__style {
@@ -419,13 +424,15 @@ body .section__title {
   background: #F6F6F6;
   padding: 0px 18px 40px 18px;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768.1px) {
   .restaurants {
-    padding: 0px 50px;
+    padding: 0% 7%;
   }
 }
-.restaurants a {
-  width: 100%;
+@media screen and (min-width: 1024.1px) and (max-width: 1440px) {
+  .restaurants {
+    padding: 0% 10%;
+  }
 }
 .restaurants img {
   object-fit: cover;
@@ -434,10 +441,10 @@ body .section__title {
   width: 100%;
   border-radius: 15px 15px 0px 0px;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768.1px) {
   .restaurants__position {
     display: flex;
-    gap: 7%;
+    gap: 5%;
     padding-bottom: 45px;
   }
 }
@@ -445,6 +452,7 @@ body .section__title {
 .restaurants__card {
   margin-bottom: 20px;
   position: relative;
+  width: 100%;
 }
 .restaurants__card-txt {
   padding: 16px 0px 16px 13px;
@@ -475,7 +483,7 @@ body .main__img {
   height: 275px;
   object-fit: cover;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024.1px) and (max-width: 1440px) {
   body .main__img {
     height: 400px;
   }
@@ -495,7 +503,7 @@ body .main__img {
     margin: -55px auto 0;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024.1px) and (max-width: 1440px) {
   .menu {
     width: 70%;
   }
@@ -523,7 +531,7 @@ body .main__img {
     margin: auto;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1024.1px) and (max-width: 1440px) {
   .menu__parts {
     width: 60%;
   }
@@ -545,61 +553,56 @@ body .main__img {
   padding: 15px;
   display: flex;
   box-shadow: 0px 4.01149px 15.0431px 0px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
 }
-.card__content {
+.card__txt {
   overflow: hidden;
   white-space: nowrap;
   width: 100%;
 }
-.card__title {
+.card__txt--title {
   margin: 0px 0px 5px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.card__subtitle {
+.card__txt--subtitle {
   font-size: 15px;
   font-weight: 300;
   margin: unset;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.card__price {
-  font-weight: 700;
-  margin-right: 10px;
-}
-.card__check {
-  display: none;
-  animation: slide-right 0.4s 0.1s;
-}
-@keyframes slide-right {
-  0% {
-    margin-left: 0px;
-  }
-  100% {
-    margin-left: -15px;
-  }
-}
 
-.card:hover .card__check {
-  background-color: #99E2D0;
-  width: 70px;
-  padding: 15px 15px 15px 0px;
-  border-radius: 0px 15px 15px 0px;
-  animation: slide-left 0.4s both 0.1s;
+.card__content {
+  display: flex;
+  margin-right: -65px;
 }
-.card:hover .card__check i {
+.card__content--price {
+  font-weight: 700;
+  margin-right: 15px;
+}
+.card__content--check {
+  background-color: #99E2D0;
+  width: 65px;
+  border-radius: 0px 15px 15px 0px;
+  margin: -15px -15px -15px 0px;
+}
+.card__content--check i {
   color: #99E2D0;
   padding: 3px;
   border-radius: 50px;
   background-color: white;
 }
-@keyframes slide-left {
-  0% {
-    margin-right: 0px;
-  }
-  100% {
-    margin-right: -15px;
-  }
+
+.card:hover .card__content {
+  transform: translateX(-65px);
+  transition: transform 0.4s ease-in;
+}
+
+.card:not(:hover) .card__content {
+  transform: translateX(0);
+  transition: transform 0.4s ease-in;
 }
 
 .button button {
@@ -611,9 +614,9 @@ body .main__img {
   padding: 13px 19px;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
   transition: opacity 0.4s;
+  width: 186px;
   font-size: 16px;
   font-weight: 500;
-  width: 186px;
 }
 .button button:hover {
   opacity: 0.9;
