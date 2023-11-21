@@ -145,6 +145,5 @@ body {
 
     button {
         @include btn(186px);
-        @include font-style(16px, 500);
     }
 }

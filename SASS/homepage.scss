@@ -55,13 +55,10 @@ body {
         @extend %flex-center;
     
         button {
-            @include btn(218px);
-            @include font-style(16px, 500);
+            @include btn(230px);
         }
     }
 }
-
-
 
 .fonctionnement {
     margin: 0px 20px 60px 32px;
@@ -114,7 +111,6 @@ body {
         flex-direction: row;
         gap: 5%;
     }
-
 }
 
 // RESTAURANTS //
@@ -180,6 +176,6 @@ body {
 
 .btn-heart-card {
     position: absolute;
-    bottom: 33px;
+    bottom: 30px;
     right: 25px;
 }
