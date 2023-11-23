@@ -580,7 +580,7 @@ body .main__img {
 }
 .card__content--price {
   font-weight: 700;
-  margin-right: 15px;
+  margin: 27px 15px 0px 10px;
 }
 .card__content--check {
   background-color: #99E2D0;
