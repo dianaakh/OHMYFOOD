@@ -140,6 +140,7 @@
     &__like {
         @extend %flex-center;
         transition: opacity 0.5s;
+        font-size: 25px;
         position: absolute;
         inset: 0;
     }

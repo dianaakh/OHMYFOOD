@@ -175,6 +175,7 @@ body a {
 }
 .btn-heart__like {
   transition: opacity 0.5s;
+  font-size: 25px;
   position: absolute;
   inset: 0;
 }
@@ -239,7 +240,7 @@ body a {
   top: 16px;
   left: 17px;
 }
-@media screen and (min-width: 1024.1px) and (max-width: 1440px) {
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
   .header__icon {
     top: 30px;
   }
@@ -248,7 +249,7 @@ body a {
   width: 162px;
   padding: 14px 89px 10px 89px;
 }
-@media screen and (min-width: 1024.1px) and (max-width: 1440px) {
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
   .header__logo {
     padding: 30px;
   }
@@ -266,7 +267,7 @@ footer {
     gap: 30px;
   }
 }
-@media screen and (min-width: 1024.1px) and (max-width: 1440px) {
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
   footer {
     gap: 70px;
   }
@@ -281,7 +282,7 @@ footer p {
     margin-right: 15px;
   }
 }
-@media screen and (min-width: 1024.1px) and (max-width: 1440px) {
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
   footer p {
     margin-right: 25px;
   }
@@ -334,7 +335,7 @@ body .section__title {
 .decouverte__title {
   text-align: center;
 }
-@media screen and (min-width: 1024.1px) and (max-width: 1440px) {
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
   .decouverte__title h1 {
     font-size: 40px;
     margin: 0;
@@ -373,7 +374,7 @@ body .section__title {
     margin: 0% 7% 7% 7%;
   }
 }
-@media screen and (min-width: 1024.1px) and (max-width: 1440px) {
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
   .fonctionnement {
     margin: 0% 9% 7% 10%;
   }
@@ -429,7 +430,7 @@ body .section__title {
     padding: 0% 7%;
   }
 }
-@media screen and (min-width: 1024.1px) and (max-width: 1440px) {
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
   .restaurants {
     padding: 0% 10%;
   }
@@ -483,7 +484,7 @@ body .main__img {
   height: 275px;
   object-fit: cover;
 }
-@media screen and (min-width: 1024.1px) and (max-width: 1440px) {
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
   body .main__img {
     height: 400px;
   }
@@ -503,7 +504,7 @@ body .main__img {
     margin: -55px auto 0;
   }
 }
-@media screen and (min-width: 1024.1px) and (max-width: 1440px) {
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
   .menu {
     width: 70%;
   }
@@ -531,7 +532,7 @@ body .main__img {
     margin: auto;
   }
 }
-@media screen and (min-width: 1024.1px) and (max-width: 1440px) {
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
   .menu__parts {
     width: 60%;
   }

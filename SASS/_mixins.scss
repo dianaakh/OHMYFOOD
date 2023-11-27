@@ -37,7 +37,7 @@
 }
 
 @mixin large-device {
-    @media screen and (min-width: 1024.1px) and (max-width: 1440px) {
+    @media screen and (min-width: 1025px) and (max-width: 1440px) {
         @content;
     }
 }
