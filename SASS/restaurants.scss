@@ -124,14 +124,14 @@ body {
     }
 }
 
-.card:hover, .card:focus{
+.card:hover{
     .card__content {
         margin-right: 0; // fait glisser le check vers la gauche
         transition: margin-right 0.4s ease-in;
     }
 }
 
-.card:not(:hover), .card:not(:focus) {
+.card:not(:hover){
     .card__content {
     margin-right: -65px;
     transition: margin-right 0.4s ease-in;
