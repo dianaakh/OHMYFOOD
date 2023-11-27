@@ -179,10 +179,10 @@ body a {
   position: absolute;
   inset: 0;
 }
-.btn-heart:hover .btn-heart__empty {
+.btn-heart:hover .btn-heart__empty, .btn-heart:focus .btn-heart__empty {
   opacity: 0;
 }
-.btn-heart:hover .btn-heart__full {
+.btn-heart:hover .btn-heart__full, .btn-heart:focus .btn-heart__full {
   opacity: 1;
 }
 
