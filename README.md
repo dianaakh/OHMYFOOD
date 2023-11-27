@@ -1,2 +1,2 @@
 # OHMYFOOD
-![Getting started](Desktop/image.png)
+![Getting started](./Assets/images/image.png)
